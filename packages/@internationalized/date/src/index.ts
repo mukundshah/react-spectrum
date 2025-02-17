@@ -37,6 +37,7 @@ export {IndianCalendar} from './calendars/IndianCalendar';
 export {IslamicCivilCalendar, IslamicTabularCalendar, IslamicUmalquraCalendar} from './calendars/IslamicCalendar';
 export {HebrewCalendar} from './calendars/HebrewCalendar';
 export {EthiopicCalendar, EthiopicAmeteAlemCalendar, CopticCalendar} from './calendars/EthiopicCalendar';
+export {VikramSamvatCalendar} from './calendars/VikramSamvatCalendar';
 export {createCalendar} from './createCalendar';
 export {
   toCalendarDate,

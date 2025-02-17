@@ -20,7 +20,7 @@ import {IslamicCivilCalendar, IslamicTabularCalendar, IslamicUmalquraCalendar} f
 import {JapaneseCalendar} from './calendars/JapaneseCalendar';
 import {PersianCalendar} from './calendars/PersianCalendar';
 import {TaiwanCalendar} from './calendars/TaiwanCalendar';
-
+import {VikramSamvatCalendar} from './calendars/VikramSamvatCalendar';
 /** Creates a `Calendar` instance from a Unicode calendar identifier string. */
 export function createCalendar(name: string): Calendar {
   switch (name) {
@@ -48,6 +48,8 @@ export function createCalendar(name: string): Calendar {
       return new PersianCalendar();
     case 'roc':
       return new TaiwanCalendar();
+    case 'vikram':
+      return new VikramSamvatCalendar();
     case 'gregory':
     default:
       return new GregorianCalendar();

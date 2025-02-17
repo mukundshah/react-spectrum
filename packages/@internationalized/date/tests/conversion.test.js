@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {BuddhistCalendar, CalendarDate, CalendarDateTime, EthiopicAmeteAlemCalendar, EthiopicCalendar, GregorianCalendar, HebrewCalendar, IndianCalendar, IslamicCivilCalendar, IslamicTabularCalendar, IslamicUmalquraCalendar, JapaneseCalendar, PersianCalendar, TaiwanCalendar, Time, toCalendar, toCalendarDate, toCalendarDateTime, toTime, ZonedDateTime} from '..';
+import {BuddhistCalendar, CalendarDate, CalendarDateTime, EthiopicAmeteAlemCalendar, EthiopicCalendar, GregorianCalendar, HebrewCalendar, IndianCalendar, IslamicCivilCalendar, IslamicTabularCalendar, IslamicUmalquraCalendar, JapaneseCalendar, PersianCalendar, TaiwanCalendar, VikramSamvatCalendar, Time, toCalendar, toCalendarDate, toCalendarDateTime, toTime, ZonedDateTime} from '..';
 import {fromAbsolute, possibleAbsolutes, toAbsolute, toDate} from '../src/conversion';
 
 describe('CalendarDate conversion', function () {
@@ -442,6 +442,18 @@ describe('CalendarDate conversion', function () {
       it('gregorian to ethioaa', function () {
         let date = new CalendarDate(4507, 9, 29);
         expect(toCalendar(date, new EthiopicAmeteAlemCalendar())).toEqual(new CalendarDate(new EthiopicAmeteAlemCalendar(), 9999, 13, 5));
+      });
+    });
+
+    describe('vikram', function () {
+      it('vikram to gregorian', function () {
+        let date = new CalendarDate(new VikramSamvatCalendar(), 2070, 10, 25);
+        expect(toCalendar(date, new GregorianCalendar())).toEqual(new CalendarDate(2014, 2, 8));
+      });
+
+      it('gregorian to vikram', function () {
+        let date = new CalendarDate(2014, 2, 8);
+        expect(toCalendar(date, new VikramSamvatCalendar())).toEqual(new CalendarDate(new VikramSamvatCalendar(), 2070, 10, 25));
       });
     });
   });
